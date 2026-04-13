@@ -2,8 +2,11 @@ import asyncio
 import os
 from aiogram import Bot, Dispatcher, types
 
-TOKEN = os.getenv("TOKEN")
-ADMIN_ID = 7912213850  # depois você muda
+TOKEN = os.environ.get("TOKEN")
+ADMIN_ID = 7912213850  # seu ID
+
+if not TOKEN:
+    raise Exception("TOKEN não encontrado. Configure no Render.")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -28,4 +31,5 @@ async def handle_message(message: types.Message):
 async def main():
     await dp.start_polling(bot)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
