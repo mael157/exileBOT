@@ -3,7 +3,7 @@ import os
 from aiogram import Bot, Dispatcher, types
 
 TOKEN = os.getenv("TOKEN")
-ADMIN_ID = 123456789  # depois você muda
+ADMIN_ID = 7912213850  # depois você muda
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
